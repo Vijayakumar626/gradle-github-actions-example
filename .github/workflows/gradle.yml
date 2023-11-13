@@ -36,4 +36,4 @@ jobs:
 
     - name: Display structure of downloaded files
       run: ls -R
-      working-directory: build/reports/tests/test
+      working-directory: path/to/artifact/
