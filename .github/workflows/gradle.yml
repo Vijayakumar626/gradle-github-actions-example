@@ -31,6 +31,8 @@ jobs:
       with:
         name: my-artifact
         path: build/reports/tests/test
+        if-no-files-found: error
+        retention-days: 90
 
     - name: Display structure of downloaded files
       run: ls -R
