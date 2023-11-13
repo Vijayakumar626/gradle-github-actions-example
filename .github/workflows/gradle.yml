@@ -30,10 +30,10 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: my-artifact
-        path: build/reports/tests/test
+        path: src/
         if-no-files-found: error
         retention-days: 90
 
     - name: Display structure of downloaded files
       run: ls -R
-      working-directory: build/reports/tests/test
+      working-directory: src/
