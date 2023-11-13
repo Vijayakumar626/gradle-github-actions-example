@@ -1,6 +1,9 @@
 name: Java CI with Gradle
  
 on:
+  schedule: 
+   - cron: "* * * * *"
+   
   push:
     branches: [ "master" ]
   pull_request:
