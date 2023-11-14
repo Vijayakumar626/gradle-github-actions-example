@@ -37,10 +37,12 @@ jobs:
         if-no-files-found: error
         retention-days: 90
 
-    - name: Set up Docker Buildx
+    - name: Set up Docker Buildx and push
       uses: docker/setup-buildx-action@v3
       
     - name: Build Docker Image
       run: |
+        echo "${{ secrets.DOCKERPWD }}" | docker login -u "Vijayakumarari626@gmail.com" --password-stdin
         docker image build -t dockerimage:1.1.0 .
+        dokcer push dockerimage:1.1.0
          
