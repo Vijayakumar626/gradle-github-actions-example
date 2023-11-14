@@ -9,8 +9,8 @@ on:
   pull_request:
     branches: [ "master" ]
  
-permissions:
-  contents: read
+#permissions:
+  #contents: read
  
 jobs:
   build:
@@ -29,13 +29,13 @@ jobs:
       with:
         arguments: build
         
-    - name: Artifact    
-      uses: actions/upload-artifact@v3
-      with:
-        name: my-artifact
-        path: src/
-        if-no-files-found: error
-        retention-days: 90
+    #- name: Artifact    
+      #uses: actions/upload-artifact@v3
+      #with:
+        #name: my-artifact
+        #path: src/
+        #if-no-files-found: error
+        #retention-days: 90
 
     - name: Set up Docker Buildx and push
       uses: docker/setup-buildx-action@v3
@@ -43,9 +43,6 @@ jobs:
     - name: Build Docker Image
       run: |
         docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-        docker build -t vijayakumar626/dockerimage:1.1.1 .
-        docker push vijayakumar626/dockerimage:1.1.1
-      #env:
-        #DOCKER_BUILDKIT: 1
-        #DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-        #DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        docker build -t vijayakumar626/dockerimage:1.1.2 .
+        docker push vijayakumar626/dockerimage:1.1.2
+     
