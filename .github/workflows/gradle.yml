@@ -43,8 +43,8 @@ jobs:
     - name: Build Docker Image
       run: |
         docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-        docker build -t vijayakumar626/dockerimage:1.1.0 .
-        docker push vijayakumar626/dockerimage:1.1.0
+        docker build -t vijayakumar626/dockerimage:1.1.1 .
+        docker push vijayakumar626/dockerimage:1.1.1
       #env:
         #DOCKER_BUILDKIT: 1
         #DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
