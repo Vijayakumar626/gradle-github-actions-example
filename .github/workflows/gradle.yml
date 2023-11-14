@@ -42,7 +42,7 @@ jobs:
       
     - name: Build Docker Image
       run: |
-        echo "${{ secrets.DOCKERPWD }}" | docker login -u "Vijayakumarari626@gmail.com" --password-stdin
+        echo "${{ secrets.DOCKERPWD }}" | docker login -u "vijayakumar626" --password-stdin
         docker image build -t dockerimage:1.1.0 .
         dokcer push dockerimage:1.1.0
          
