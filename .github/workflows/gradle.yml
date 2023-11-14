@@ -42,7 +42,9 @@ jobs:
       
     - name: Build Docker Image
       run: |
-        echo "${{ secrets.DOCKERPWD }}" | docker login -u "vijayakumar626" --password-stdin
-        docker image build -t vijayakumar626/dockerimage:1.1.0 .
-        dokcer push vijayakumar626/dockerimage:1.1.0
-         
+        docker build -t vijayakumar626/dockerimage:1.1.0 .
+        docker push vijayakumar626/dockerimage:1.1.0
+      env:
+        DOCKER_BUILDKIT: 1
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
